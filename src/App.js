@@ -1,14 +1,36 @@
 import React, { Component } from 'react'
-import './App.css'
+import Player from './Player'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <h1>hello worlds</h1>
-      </div>
-    );
+  constructor(){
+    super()
+    this.state = {
+      players:[
+        {
+          name: String,
+          score: Number
+        },
+        {
+          name: String,
+          score: Number
+        },
+        {
+          name: String,
+          score: Number
+        }
+      ]
+    }
   }
+  render(){
+    return(
+      <div className="app">
+        <Player/>
+        <Player/>
+        <Player/>
+      </div>
+    )
+  }
+
 }
 
 export default App;
