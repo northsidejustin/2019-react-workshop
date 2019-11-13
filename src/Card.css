@@ -1,0 +1,11 @@
+.card{
+  margin: 0.2em;
+  height: calc(20vh - 0.4em);
+  background: #060CE9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: yellow;
+  font-weight: bold;
+  text-shadow: 2px 2px #000000;
+}
