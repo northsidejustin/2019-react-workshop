@@ -38,7 +38,7 @@ git clone git@github.com:northsidejustin/2019-react-workshop.git
 
 ### 4. Running the Application
 
-The app we created can be run locally on your system. To do so, simply your change directory to the project and install the necessary modules.
+The app we created can be run locally on your system. To do so, simply change your directory to the project and install the necessary modules.
 
 ```bash
 cd 2019-react-workshop
