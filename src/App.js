@@ -3,10 +3,10 @@ import Player from './Player'
 import Board from './Board'
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
-      players:[
+      players: [
         {
           name: String,
           score: Number
@@ -22,14 +22,14 @@ class App extends Component {
       ]
     }
   }
-  render(){
-    return(
+  render() {
+    return (
       <div className="app">
         {/* <Player/>
         <Player/>
         <Player/> */}
 
-        <Board/>
+        <Board />
       </div>
     )
   }
