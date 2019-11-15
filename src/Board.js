@@ -1,13 +1,15 @@
 //parent component that will hold the cards
-import React, { Component } from "react"
-import "./Board.css"
-import Category from "./Category"
+import React, { Component } from 'react'
+import './Board.css'
+import Category from './Category'
+import Modal from './Modal'
 
 class Board extends Component {
   constructor() {
     super()
     this.state = {
-      categories: [
+      displayModal: false,
+      categories:[
         {
           name: "CANADA",
           questions: [
@@ -154,7 +156,7 @@ class Board extends Component {
             {
               price: 20,
               question: "Bo Derek played this man's stepmother in Tommy Boy",
-              answer: "KE$CHRIS FARLEY"
+              answer: "CHRIS FARLEY"
             },
             {
               price: 30,
@@ -179,17 +181,34 @@ class Board extends Component {
       ]
     }
   }
-  render() {
-    const categories = this.state.categories.map((category, index) => {
-      return (
-        <Category
-          name={category.name}
-          key={index}
-          questions={category.questions}
-        />
-      )
-    })
-    return <div className="board">{categories}</div>
+  render(){
+    const {displayModal, modalData} = this.state
+
+    const categories = this.state.categories.map(
+      (category, index)=>{
+        return (
+          <Category
+            name={category.name}
+            key={index}
+            questions={category.questions}
+            modalFn={this.showModal}
+          />
+        )
+      }
+    )
+
+    return(
+      <div className="board">
+        { categories }
+        <Modal displayModal={displayModal} modalData={modalData}/>
+        </div>
+    )
+  }
+
+  showModal = (question, answer, value) => {
+    this.setState({displayModal: true, modalData: {
+      question, answer, value
+    }})
   }
 }
 
