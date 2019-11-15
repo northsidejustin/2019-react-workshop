@@ -1,6 +1,6 @@
 .card {
-  border: 0.4em solid white;
-  height: calc(16.6vh - 0.8em);
+  border: 0.2em solid black;
+  height: calc(17.5vh - 0.8em);
   background: #060ce9;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
 }
 
 .card:hover {
-  border: 0.4em solid yellow;
+  border: 0.2em solid yellow;
   background: yellow;
   color: #060ce9;
   text-shadow: 2px 2px white;
