@@ -29,11 +29,11 @@ To get the start-up template follow the instructions below:
 * Make a directory for the workshop project in you desired location `> mkdir react-workshop`
 * Clone the repo using HTTP 
 ```bash
-git clone https://github.com/northsidejustin/2019-react-workshop.git
+git clone https://github.com/ShivamSabbarwal/react-workshop-2019-template.git
 ``` 
 * Or if you have have SSH setup 
 ```bash
-git clone git@github.com:northsidejustin/2019-react-workshop.git
+git clone git@github.com:ShivamSabbarwal/react-workshop-2019-template.git
 ```
 
 ### 4. Running the Application
