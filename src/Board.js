@@ -1,15 +1,15 @@
 //parent component that will hold the cards
-import React, { Component } from 'react'
-import './Board.css'
-import Category from './Category'
-import Modal from './Modal'
+import React, { Component } from "react"
+import "./Board.css"
+import Category from "./Category"
+import Modal from "./Modal"
 
 class Board extends Component {
   constructor() {
     super()
     this.state = {
       displayModal: false,
-      categories:[
+      categories: [
         {
           name: "CANADA",
           questions: [
@@ -180,35 +180,51 @@ class Board extends Component {
         }
       ]
     }
+    this.toggleModal = this.toggleModal.bind(this)
   }
-  render(){
-    const {displayModal, modalData} = this.state
 
-    const categories = this.state.categories.map(
-      (category, index)=>{
-        return (
-          <Category
-            name={category.name}
-            key={index}
-            questions={category.questions}
-            modalFn={this.showModal}
-          />
-        )
-      }
-    )
+  toggleModal() {
+    this.setState(prevState => ({ displayModal: !prevState.displayModal }))
+  }
+  render() {
+    const { displayModal, modalData } = this.state
 
-    return(
-      <div className="board">
-        { categories }
-        <Modal displayModal={displayModal} modalData={modalData}/>
-        </div>
+    const categories = this.state.categories.map((category, index) => {
+      return (
+        <Category
+          name={category.name}
+          key={index}
+          questions={category.questions}
+          modalFn={this.showModal}
+        />
+      )
+    })
+
+    return (
+      <div>
+        {displayModal ? (
+          <div className="modal">
+            <span className="close" onClick={this.toggleModal}>
+              &times;
+            </span>
+            <Modal displayModal={displayModal} modalData={modalData} />
+          </div>
+        ) : (
+          <div className="board">{categories}</div>
+        )}
+      </div>
     )
   }
 
   showModal = (question, answer, value) => {
-    this.setState({displayModal: true, modalData: {
-      question, answer, value
-    }})
+    this.setState({
+      displayModal: true,
+      modalData: {
+        question,
+        answer,
+        value
+      }
+    })
   }
 }
 

@@ -1,3 +1,26 @@
-.board{
+.board {
   display: flex;
+}
+
+.close {
+  position: fixed;
+  right: 2%;
+  top: 2%;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 16px;
+  color: white;
+  background: #060ce9;
 }
