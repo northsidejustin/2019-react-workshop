@@ -22,10 +22,36 @@ Test Node. To see if Node is installed, type `node -v` in Terminal. This should 
 
 Test NPM. To see if NPM is installed, type `npm -v` in Terminal. This should print the version number so you’ll see something like this 6.12.0
 
-### 3. Getting the Project onto your Machine
+### 3. Install Git and Git Bash
+
+#### Installing on Windows
+The most official build is available for download on the Git website. Just go to https://git-scm.com/download/win and the download will start automatically.
+
+#### Installing on Linux
+If you want to install the basic Git tools on Linux via a binary installer, you can generally do so through the package management tool that comes with your distribution. If you’re on Fedora (or any closely-related RPM-based distribution, such as RHEL or CentOS), you can use dnf:
+```bash
+$ sudo dnf install git-all
+```
+If you’re on a Debian-based distribution, such as Ubuntu, try apt:
+```bash
+$ sudo apt install git-all
+```
+For more options, there are instructions for installing on several different Unix distributions on the Git website, at https://git-scm.com/download/linux.
+
+#### Installing on macOS
+There are several ways to install Git on a Mac. The easiest is probably to install the Xcode Command Line Tools. On Mavericks (10.9) or above you can do this simply by trying to run git from the Terminal the very first time.
+```bash
+$ git --version
+```
+If you don’t have it installed already, it will prompt you to install it.
+
+If you want a more up to date version, you can also install it via a binary installer. A macOS Git installer is maintained and available for download at the Git website, at https://git-scm.com/download/mac.
+
+### 4. Getting the Project onto your Machine
 
 To get the start-up template follow the instructions below:
 
+* Open up the terminal for Linux and MacOS or Git Bash for Windows
 * Make a directory for the workshop project in you desired location `> mkdir react-workshop`
 * Clone the repo using HTTP 
 ```bash
@@ -36,12 +62,12 @@ git clone https://github.com/ShivamSabbarwal/react-workshop-2019-template.git
 git clone git@github.com:ShivamSabbarwal/react-workshop-2019-template.git
 ```
 
-### 4. Running the Application
+### 5. Running the Application
 
 The app we created can be run locally on your system. To do so, simply change your directory to the project and install the necessary modules.
 
 ```bash
-cd 2019-react-workshop
+cd react-workshop-2019-template
 npm i
 ```
 
