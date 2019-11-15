@@ -2,11 +2,13 @@
 import React, { Component } from 'react'
 import './Board.css'
 import Category from './Category'
+import Modal from './Modal'
 
 class Board extends Component {
   constructor(){
     super()
     this.state = {
+      displayModal: false,
       categories:[
         {
           name: 'category 1',
@@ -139,14 +141,33 @@ class Board extends Component {
     }
   }
   render(){
-    const categories = this.state.categories.map((category, index)=>{
-      return <Category name={category.name} key={index} questions={category.questions}/>
-    })
+    const {displayModal, modalData} = this.state
+
+    const categories = this.state.categories.map(
+      (category, index)=>{
+        return (
+          <Category
+            name={category.name}
+            key={index}
+            questions={category.questions}
+            modalFn={this.showModal}
+          />
+        )
+      }
+    )
+
     return(
       <div className="board">
         { categories }
-      </div>
+        <Modal displayModal={displayModal} modalData={modalData}/>
+        </div>
     )
+  }
+
+  showModal = (question, answer, value) => {
+    this.setState({displayModal: true, modalData: {
+      question, answer, value
+    }})
   }
 }
 

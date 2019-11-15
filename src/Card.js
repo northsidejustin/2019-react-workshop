@@ -2,10 +2,23 @@ import React, { Component } from 'react'
 import './Card.css'
 
 class Card extends Component{
+  constructor(){
+    super()
+    this.showModal = this.showModal.bind(this)
+  }
+
+  showModal(){
+    this.props.modalFn(this.props.content, 'test', this.props.price)
+  }
+
   render(){
-    return(
-      <div className="card">{ this.props.text }</div>
-    )
+    const {category, header, price} = this.props
+
+    if (header){
+      return <div className="card">{category}</div>
+    } else{
+      return <div className="card" onClick={this.showModal}>{price}</div>
+    }
   }
 }
 

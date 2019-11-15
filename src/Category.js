@@ -4,11 +4,11 @@ import './Category.css'
 
 const Category = (props) =>{
   const cards = props.questions.map((question, index) =>{
-    return <Card key={index} text={question.price}/>
+    return <Card key={index} price={question.price} content={question.content} modalFn={props.modalFn}/>
   })
   return(
     <div className="category">
-      <Card text={props.name}/>
+      <Card category={props.name} header/>
       {cards}
     </div>
   )
