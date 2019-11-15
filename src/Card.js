@@ -8,7 +8,7 @@ class Card extends Component{
   }
 
   showModal(){
-    this.props.modalFn(this.props.content, 'test', this.props.price)
+    this.props.modalFn(this.props.question, this.props.answer, this.props.price)
   }
 
   render(){

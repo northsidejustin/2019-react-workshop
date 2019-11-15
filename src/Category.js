@@ -3,8 +3,8 @@ import Card from './Card'
 import './Category.css'
 
 const Category = (props) =>{
-  const cards = props.questions.map((question, index) =>{
-    return <Card key={index} price={question.price} content={question.content} modalFn={props.modalFn}/>
+  const cards = props.questions.map((q, index) =>{
+    return <Card key={index} price={q.price} question={q.question} modalFn={props.modalFn} answer={q.answer}/>
   })
   return(
     <div className="category">

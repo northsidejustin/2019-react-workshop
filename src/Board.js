@@ -156,7 +156,7 @@ class Board extends Component {
             {
               price: 20,
               question: "Bo Derek played this man's stepmother in Tommy Boy",
-              answer: "KE$CHRIS FARLEY"
+              answer: "CHRIS FARLEY"
             },
             {
               price: 30,
