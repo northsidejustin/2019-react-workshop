@@ -52,25 +52,24 @@ class Board extends Component {
             },
             {
               price: 20,
-              question: "To inject someone with a small amount of a disease so that they can become immune to it",
+              question:
+                "To inject someone with a small amount of a disease so that they can become immune to it",
               answer: "TO INOCULATE"
             },
             {
               price: 30,
-              question:
-                "Dancing Queen can feel the beat from this instrument",
-              answer:
-                "TAMBOURINE"
+              question: "Dancing Queen can feel the beat from this instrument",
+              answer: "TAMBOURINE"
             },
             {
               price: 40,
-              question: "It sounds like you're writing a novel but it means to empower or formally sanction an act",
+              question:
+                "It sounds like you're writing a novel but it means to empower or formally sanction an act",
               answer: "AUTHORIZE"
             },
             {
               price: 50,
-              question:
-                "Ecstatic happiness",
+              question: "Ecstatic happiness",
               answer: "EUPHORIA"
             }
           ]
@@ -80,20 +79,21 @@ class Board extends Component {
           questions: [
             {
               price: 10,
-              question: "If your high-flying idea turns out to be a dud it lands with this sound that rhymes with dud",
+              question:
+                "If your high-flying idea turns out to be a dud it lands with this sound that rhymes with dud",
               answer: "THUD"
             },
             {
               price: 20,
-              question: "Hearing this hyphenated sound of tiny feet means you have kids in the house or mice",
+              question:
+                "Hearing this hyphenated sound of tiny feet means you have kids in the house or mice",
               answer: "PITTER-PATTER"
             },
             {
               price: 30,
               question:
                 "After a few hours in the hot sun I'm ready to drink a cold beverage this way also an engine sound",
-              answer:
-                "CHUG"
+              answer: "CHUG"
             },
             {
               price: 40,
@@ -102,8 +102,7 @@ class Board extends Component {
             },
             {
               price: 50,
-              question:
-                "Hey! It's a 6-letter bray from Mr. Ed",
+              question: "Hey! It's a 6-letter bray from Mr. Ed",
               answer: "WHINNY"
             }
           ]
@@ -113,24 +112,26 @@ class Board extends Component {
           questions: [
             {
               price: 10,
-              question: "She's been caught in Peter Parker's web playing MJ in Marvel's Spider-Man flicks",
+              question:
+                "She's been caught in Peter Parker's web playing MJ in Marvel's Spider-Man flicks",
               answer: "ZENDAYA"
             },
             {
               price: 20,
-              question: "In 2010 back when she still spelled her name with a dollar sign she had a No. 1 hit with We R Who We R",
+              question:
+                "In 2010 back when she still spelled her name with a dollar sign she had a No. 1 hit with We R Who We R",
               answer: "KE$HA"
             },
             {
               price: 30,
               question:
                 "Bassist for the Red Hot Chili Peppers he's acted in films like Baby Driver & The Big Lebowski",
-              answer:
-                "FLEA"
+              answer: "FLEA"
             },
             {
               price: 40,
-              question: "This British model almost had a date with Elwood in The Blues Brothers but it didn't stick",
+              question:
+                "This British model almost had a date with Elwood in The Blues Brothers but it didn't stick",
               answer: "TWIGGY"
             },
             {
@@ -146,7 +147,8 @@ class Board extends Component {
           questions: [
             {
               price: 10,
-              question: "Hiccup is the hero of this animated trilogy about Vikings & the creatures they once feared",
+              question:
+                "Hiccup is the hero of this animated trilogy about Vikings & the creatures they once feared",
               answer: "HOW TO TRAIN YOUR DRAGON"
             },
             {
@@ -158,12 +160,12 @@ class Board extends Component {
               price: 30,
               question:
                 "In 2019 Christina Hendricks revealed that's her hand holding the rose on the poster for this 1999 Best Picture Oscar winner",
-              answer:
-                "AMERICAN BEAUTY"
+              answer: "AMERICAN BEAUTY"
             },
             {
               price: 40,
-              question: "Spanish slang for hitman provides the title of this drug cartel thriller with Benicio del Toro & its Day of the Soldado sequel",
+              question:
+                "Spanish slang for hitman provides the title of this drug cartel thriller with Benicio del Toro & its Day of the Soldado sequel",
               answer: "SICARIO"
             },
             {
