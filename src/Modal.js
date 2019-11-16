@@ -15,22 +15,29 @@ class Modal extends Component {
     }))
   }
 
-  render() {
-    const { modalData } = this.props
-    const { showAnswer } = this.state
+  closeModal = () =>{
+    this.props.onClose()
+    this.setState({
+      showAnswer: false,
+    })
+  }
 
+  render() {
+    const { modalData = {}, displayModal, onClose } = this.props
+    const { showAnswer } = this.state
     return (
-      <div className="modal-container">
-        <div>
-          <div className="modal-body">{modalData.question}</div>
-          <div className="modal-footer">
-            <div>{showAnswer ? modalData.answer : ""}</div>
-            <div>
-              <button className="btn" onClick={this.showAnswerButton}>
-                {showAnswer ? "Hide Answer" : "Show Answer"}
-              </button>
-            </div>
+      <div className={`modal-container ${displayModal ? 'show' : ''}`}>
+        <div className="header">
+          <div className="close" onClick={this.closeModal}>&times;</div>
+        </div>
+        <div className="modal-body">
+          <div className="question">{modalData.question}</div>
+          <div className="answer">
+            { showAnswer ? modalData.answer : ''}
           </div>
+          <button className="btn" onClick={this.showAnswerButton}>
+            {showAnswer ? 'Hide Answer' : 'Show Answer'}
+          </button>
         </div>
       </div>
     )
