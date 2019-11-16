@@ -1,11 +1,32 @@
 import React, { Component } from "react"
 import "./Modal.css"
 
+const ESC = 27;
+
 class Modal extends Component {
   constructor(props) {
     super(props)
     this.state = {
       showAnswer: false
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { displayModal } = this.props
+
+    if (displayModal && !prevProps.displayModal) {
+      // add event listener if being displayed
+      window.addEventListener('keydown', this.onKeyPress)
+
+    } else if (!displayModal && prevProps.displayModal) {
+      // remove event listener if being hidden
+      window.removeEventListener('keydown', this.onKeyPress)
+    }
+  }
+
+  onKeyPress = (event) => {
+    if (event.keyCode === ESC) {
+      this.closeModal();
     }
   }
 
@@ -23,7 +44,7 @@ class Modal extends Component {
   }
 
   render() {
-    const { modalData = {}, displayModal, onClose } = this.props
+    const { modalData = {}, displayModal } = this.props
     const { showAnswer } = this.state
     return (
       <div className={`modal-container ${displayModal ? 'show' : ''}`}>
