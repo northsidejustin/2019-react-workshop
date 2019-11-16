@@ -9,22 +9,23 @@ class Card extends Component {
     }
   }
   showModal = () => {
-    const { question, answer, price, modalFn} = this.props
-    modalFn(question, answer, price)
+    const { modalFn } = this.props
+    modalFn()
     this.setState({
-      isVisitied: true
+      isVisited: true
     })
   }
 
   render() {
-    const { category, header, price } = this.props
+    const { category, value } = this.props
+    const { isVisited } = this.state
 
-    if (header) {
+    if (category) {
       return <div className="card header">{category}</div>
     } else {
       return (
-        <div className={`card ${this.state.isVisitied ? 'visited' : ''}`} onClick={this.showModal}>
-          ${price}
+        <div className={`card ${isVisited ? 'visited' : ''}`} onClick={this.showModal}>
+          ${value}
         </div>
       )
     }
