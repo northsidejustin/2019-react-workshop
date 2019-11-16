@@ -7,20 +7,19 @@ class Modal extends Component {
     this.state = {
       showAnswer: false
     }
-    this.showAnswerButton = this.showAnswerButton.bind(this)
   }
 
-  showAnswerButton() {
+  showAnswerButton = () => {
     this.setState(prevState => ({
       showAnswer: !prevState.showAnswer
     }))
   }
 
   render() {
-    const { displayModal, modalData } = this.props
+    const { modalData } = this.props
     const { showAnswer } = this.state
 
-    return displayModal ? (
+    return (
       <div className="modal-container">
         <div>
           <div className="modal-body">{modalData.question}</div>
@@ -34,7 +33,7 @@ class Modal extends Component {
           </div>
         </div>
       </div>
-    ) : null
+    )
   }
 }
 

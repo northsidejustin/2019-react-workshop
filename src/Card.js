@@ -2,12 +2,7 @@ import React, { Component } from "react"
 import "./Card.css"
 
 class Card extends Component {
-  constructor() {
-    super()
-    this.showModal = this.showModal.bind(this)
-  }
-
-  showModal() {
+  showModal = () => {
     this.props.modalFn(this.props.question, this.props.answer, this.props.price)
   }
 

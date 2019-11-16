@@ -214,12 +214,22 @@ class Board extends Component {
         }
       ]
     }
-    this.toggleModal = this.toggleModal.bind(this)
   }
 
-  toggleModal() {
+  setModal = (question, answer, value) => {
+    this.setState({
+      modalData: {
+        question,
+        answer,
+        value
+      }
+    })
+    this.toggleModal();
+  }
+  toggleModal = () => {
     this.setState(prevState => ({ displayModal: !prevState.displayModal }))
   }
+
   render() {
     const { displayModal, modalData } = this.state
 
@@ -229,7 +239,7 @@ class Board extends Component {
           name={category.name}
           key={index}
           questions={category.questions}
-          modalFn={this.showModal}
+          modalFn={this.setModal}
         />
       ) 
     })
@@ -241,24 +251,13 @@ class Board extends Component {
             <span className="close" onClick={this.toggleModal}>
               &times;
             </span>
-            <Modal displayModal={displayModal} modalData={modalData} />
+            <Modal modalData={modalData} />
           </div>
         ) : (
           <div className="board">{categories}</div>
         )}
       </div>
     )
-  }
-
-  showModal = (question, answer, value) => {
-    this.setState({
-      displayModal: true,
-      modalData: {
-        question,
-        answer,
-        value
-      }
-    })
   }
 }
 
