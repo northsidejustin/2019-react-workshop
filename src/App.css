@@ -1,17 +1,73 @@
 .player-list {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  height: 15%;
-}
+  height: 20%;
+  background: #060ce9;
+  }
 
 .player-input {
-  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
-  width: 20%;
-  background-color: lightblue;
+  height: 80%;
+  width: 30%;
+  max-width: 350px;
+  background-color: white;
+  border: 3px solid black;
+  
+}
+
+.player-input input{
+  width: 100%; 
+  border: none;
+  box-sizing: border-box;
+  padding: 0.5em;
+  background: #060ce9;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.player-score{
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin: 0.5em;
+}
+
+button{
+  background-color: white;
+  color: #060ce9;
+  border: 1px solid #060ce9;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  padding: 0 2em; 
+  border-radius: 5px;
+    margin-left:10px; 
+  margin-right: 10px;
+}
+
+button:hover{
+  background-color: #060ce9;
+  color: white;
+  border: 1px solid white;
+}
+.minus{
+  color: red;
+}
+
+.plus{
+  color: green; 
+}
+
+label{
+  color: #060ce9;
+  font-weight: bold;
+  font-size: 1.1em;
 }

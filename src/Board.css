@@ -7,6 +7,7 @@
 .board {
   display: flex;
   height: 85%;
+  background: #060ce9;
 }
 
 .player-list{

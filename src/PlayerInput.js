@@ -13,9 +13,9 @@ const PlayerInput = ({ name, score, setName, setScore }) => {
         onChange={onChange}
       />
       <div className="player-score">
-        <button onClick={() => {setScore('sub')}}> - </button>
-        <label>{score}</label>
-        <button onClick={() => {setScore('add')}}> + </button>
+        <button onClick={() => {setScore('sub')}} className="minus"> - </button>
+        <label>${score}</label>
+        <button onClick={() => {setScore('add')}} className="plus"> + </button>
       </div>
     </div>
   )
