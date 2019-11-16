@@ -12,8 +12,13 @@
   text-shadow: 2px 2px black;
 }
 
+.card.visited{
+  background: grey;
+  pointer-events: none;
+}
+
 .header{
-  color: white;
+  color: white; 
 }
 
 .card:not(.header):hover {

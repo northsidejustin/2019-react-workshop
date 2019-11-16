@@ -2,8 +2,18 @@ import React, { Component } from "react"
 import "./Card.css"
 
 class Card extends Component {
+  constructor(){
+    super()
+    this.state = {
+      isVisited: false
+    }
+  }
   showModal = () => {
-    this.props.modalFn(this.props.question, this.props.answer, this.props.price)
+    const { question, answer, price, modalFn} = this.props
+    modalFn(question, answer, price)
+    this.setState({
+      isVisitied: true
+    })
   }
 
   render() {
@@ -13,7 +23,7 @@ class Card extends Component {
       return <div className="card header">{category}</div>
     } else {
       return (
-        <div className="card" onClick={this.showModal}>
+        <div className={`card ${this.state.isVisitied ? 'visited' : ''}`} onClick={this.showModal}>
           ${price}
         </div>
       )

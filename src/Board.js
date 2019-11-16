@@ -17,7 +17,8 @@ class Board extends Component {
               price: 200,
               question:
                 "How many provinces and territories are there in Canada?",
-              answer: "Canada has ten provinces and three territories."
+              answer: "Canada has ten provinces and three territories.",
+              isVistied: false
             },
             {
               price: 400,
@@ -222,12 +223,18 @@ class Board extends Component {
         question,
         answer,
         value
-      }
+      },
+
     })
     this.toggleModal();
   }
+
   toggleModal = () => {
     this.setState(prevState => ({ displayModal: !prevState.displayModal }))
+  }
+
+  disableCard = () => {
+
   }
 
   render() {
@@ -246,16 +253,10 @@ class Board extends Component {
 
     return (
       <div>
-        {displayModal ? (
-          <div className="modal">
-            <span className="close" onClick={this.toggleModal}>
-              &times;
-            </span>
-            <Modal modalData={modalData} />
-          </div>
-        ) : (
-          <div className="board">{categories}</div>
-        )}
+        <div className="board">
+          { categories }
+        </div>
+        <Modal modalData={modalData} displayModal={displayModal} onClose={this.toggleModal}/>
       </div>
     )
   }
