@@ -225,11 +225,19 @@ class Board extends Component {
 
   setModal = (question) => {
     this.setState({modalData: {...question}})
-    this.toggleModal();
+    this.openModal()
   }
 
-  toggleModal = () => {
-    this.setState(prevState => ({ displayModal: !prevState.displayModal }))
+  openModal = ()=>{
+    this.setState({
+      displayModal: true
+    })
+  }
+
+  closeModal = ()=>{
+    this.setState({
+      displayModal: false
+    })
   }
 
   setPlayerName = (index, name) => {
@@ -278,11 +286,11 @@ class Board extends Component {
     })
 
     return (
-      <div class="container">
+      <div className="container">
         <div className="board">
           { categoryList }
         </div>
-        <Modal modalData={modalData} displayModal={displayModal} onClose={this.toggleModal}/>
+        <Modal modalData={modalData} displayModal={displayModal} onClose={this.closeModal}/>
         <div className="player-list">
           {playerList}
         </div>
