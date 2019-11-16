@@ -1,6 +1,6 @@
 .card {
   border: 0.2em solid black;
-  height: calc(17.5vh - 0.8em);
+  height: calc(16.6% - 0.4em);
   background: #060ce9;
   display: flex;
   align-items: center;
@@ -14,6 +14,7 @@
 
 .card.visited{
   background: grey;
+  color: grey;
   pointer-events: none;
 }
 

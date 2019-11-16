@@ -278,7 +278,7 @@ class Board extends Component {
     })
 
     return (
-      <div>
+      <div class="container">
         <div className="board">
           { categoryList }
         </div>

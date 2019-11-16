@@ -1,5 +1,17 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .board {
   display: flex;
+  height: 85%;
+}
+
+.player-list{
+  height: 15%;
+  align-self: initial;
 }
 
 .close {

@@ -1,8 +1,8 @@
 .player-list {
   display: flex;
   justify-content: space-evenly;
-  background: black;
-  align-self: flex-end;
+  align-items: center;
+  height: 15%;
 }
 
 .player-input {
