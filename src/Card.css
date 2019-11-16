@@ -1,11 +1,19 @@
-.card{
-  margin: 0.2em;
-  height: calc(16.9vh - 0.4em);
-  background: #060CE9;
+.card {
+  border: 0.2em solid black;
+  height: calc(17.5vh - 0.8em);
+  background: #060ce9;
   display: flex;
   align-items: center;
   justify-content: center;
   color: yellow;
+  font-size: 18px;
   font-weight: bold;
-  text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px black;
+}
+
+.card:hover {
+  border: 0.2em solid yellow;
+  background: yellow;
+  color: #060ce9;
+  text-shadow: 2px 2px white;
 }

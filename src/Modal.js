@@ -1,36 +1,41 @@
-import React, { Component } from "react";
-import "./Modal.css";
+import React, { Component } from "react"
+import "./Modal.css"
 
 class Modal extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
     this.state = {
       showAnswer: false
-    };
-    this.showAnswerButton = this.showAnswerButton.bind(this);
+    }
+    this.showAnswerButton = this.showAnswerButton.bind(this)
   }
 
   showAnswerButton() {
-    this.setState(state => {
-      return { showAnswer: !state.showAnswer };
-    });
+    this.setState(prevState => ({
+      showAnswer: !prevState.showAnswer
+    }))
   }
 
   render() {
-    const { displayModal, modalData } = this.props;
+    const { displayModal, modalData } = this.props
+    const { showAnswer } = this.state
+
     return displayModal ? (
-      <div className="modal">
-        <div className="header"></div>
-        {modalData.question}
+      <div className="modal-container">
         <div>
-          {(this.state.showAnswer ? modalData.answer: "")}
-          <button onClick={this.showAnswerButton}>
-            {this.state.showAnswer ? "Hide Answer" : "Show Answer"}
-          </button>
+          <div className="modal-body">{modalData.question}</div>
+          <div className="modal-footer">
+            <div>{showAnswer ? modalData.answer : ""}</div>
+            <div>
+              <button className="btn" onClick={this.showAnswerButton}>
+                {showAnswer ? "Hide Answer" : "Show Answer"}
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    ) : null;
+    ) : null
   }
 }
 
-export default Modal;
+export default Modal
