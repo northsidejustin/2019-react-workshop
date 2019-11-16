@@ -3,20 +3,20 @@ import Card from "./Card"
 import "./Category.css"
 
 const Category = props => {
-  const cards = props.questions.map((q, index) => {
+  const {questions, modalFn, name} = props
+
+  const cards = questions.map((q, index) => {
     return (
       <Card
         key={index}
-        price={q.price}
-        question={q.question}
-        modalFn={props.modalFn}
-        answer={q.answer}
+        modalFn={() => modalFn(q)}
+        value={q.value}
       />
     )
   })
   return (
     <div className="category">
-      <Card category={props.name} header />
+      <Card category={name} />
       {cards}
     </div>
   )
