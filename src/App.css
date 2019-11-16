@@ -1,19 +1,17 @@
-.player-input-list {
+.player-list {
   display: flex;
   justify-content: space-evenly;
+  background: black;
+  align-self: flex-end;
 }
 
 .player-input {
-  height: 150px;
-  width: 20%;
-  border-style: solid;
-  border-radius: 10%;
-  background-color: lightblue;
-}
-
-.setup-form {
-  /* display: flex;
+  padding: 5px;
+  display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center; */
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 20%;
+  background-color: lightblue;
 }

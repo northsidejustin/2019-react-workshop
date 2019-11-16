@@ -1,14 +1,21 @@
 //parent component that will hold the cards
 import React, { Component } from "react"
+import { get } from 'lodash';
 import "./Board.css"
 import Category from "./Category"
 import Modal from "./Modal"
+import PlayerInput from "./PlayerInput";
 
 class Board extends Component {
   constructor() {
     super()
     this.state = {
       displayModal: false,
+      players: [
+        {name: 'player 1', score: 0},
+        {name: 'player 2', score: 0},
+        {name: 'player 3', score: 0}
+      ],
       categories: [
         {
           name: "CANADA",
@@ -29,7 +36,7 @@ class Board extends Component {
               question:
                 "True/False: Canada is the third largest country in the world?",
               answer:
-                "False. Ca  nada is the second largest country in the world."
+                "False. Canada is the second largest country in the world."
             },
             {
               price: 800,
@@ -229,11 +236,28 @@ class Board extends Component {
   toggleModal = () => {
     this.setState(prevState => ({ displayModal: !prevState.displayModal }))
   }
+  setPlayerName = (index, name) => {
+    this.setState(prevState => {
+      let players = prevState.players;
+      players[index].name = name;
+      return({players})
+    })
+  }
+  setPlayerScore = (index, operation) => {
+    const currValue = get(this.state, `modalData.value`, 0);
+    const scoreChange = operation === 'add' ? currValue : (-1 * currValue);
+
+    this.setState(prevState => {
+      let players = prevState.players;
+      players[index].score += scoreChange;
+      return({players})
+    })
+  }
 
   render() {
-    const { displayModal, modalData } = this.state
+    const { categories, displayModal, modalData, players } = this.state
 
-    const categories = this.state.categories.map((category, index) => {
+    const categoryList = categories.map((category, index) => {
       return (
         <Category
           name={category.name}
@@ -242,6 +266,18 @@ class Board extends Component {
           modalFn={this.setModal}
         />
       ) 
+    })
+
+    const playerList = players.map((player, index) => {
+      return (
+        <PlayerInput
+          key={index}
+          name={player.name}
+          score={player.score}
+          setName={(name) => this.setPlayerName(index, name)}
+          setScore={(operation) => this.setPlayerScore(index, operation)}
+        />
+      )
     })
 
     return (
@@ -254,8 +290,13 @@ class Board extends Component {
             <Modal modalData={modalData} />
           </div>
         ) : (
-          <div className="board">{categories}</div>
+          <div className="board">
+            {categoryList}
+          </div>
         )}
+        <div className="player-list">
+          {playerList}
+        </div>
       </div>
     )
   }
