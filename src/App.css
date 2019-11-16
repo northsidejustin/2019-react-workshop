@@ -1,0 +1,19 @@
+.player-input-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.player-input {
+  height: 150px;
+  width: 20%;
+  border-style: solid;
+  border-radius: 10%;
+  background-color: lightblue;
+}
+
+.setup-form {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center; */
+}
