@@ -15,7 +15,7 @@ class Card extends Component {
     const { category, header, price } = this.props
 
     if (header) {
-      return <div className="card">{category}</div>
+      return <div className="card header">{category}</div>
     } else {
       return (
         <div className="card" onClick={this.showModal}>

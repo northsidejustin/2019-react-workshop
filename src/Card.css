@@ -12,9 +12,14 @@
   text-shadow: 2px 2px black;
 }
 
-.card:hover {
+.header{
+  color: white;
+}
+
+.card:not(.header):hover {
   border: 0.2em solid yellow;
   background: yellow;
   color: #060ce9;
   text-shadow: 2px 2px white;
+  cursor: pointer;
 }
