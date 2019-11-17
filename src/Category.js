@@ -1,5 +1,5 @@
 import React from "react"
-import './Category.css'
+import './assets/css/Category.css'
 
 const Category = props => {
 
