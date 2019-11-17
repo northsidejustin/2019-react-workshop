@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import "./Modal.css"
+import './Modal.css'
 
 const ESC = 27;
 

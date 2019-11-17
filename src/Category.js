@@ -1,6 +1,6 @@
 import React from "react"
 import Card from "./Card"
-import "./Category.css"
+import './Category.css'
 
 const Category = props => {
   const {questions, modalFn, name} = props
